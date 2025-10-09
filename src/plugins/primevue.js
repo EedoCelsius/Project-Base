@@ -16,12 +16,13 @@ const tones = (prefix) => ({
 });
 
 const UnifiedAura = definePreset(Aura, {
-  primitive: {
-    emerald: tones('primary'),
-    slate: tones('surface'),
-    gray: tones('surface'),
-    neutral: tones('surface'),
-    stone: tones('surface')
+  semantic: {
+    primary: tones('primary'),
+    colorScheme: {
+      light: {
+        surface: tones('surface')
+      }
+    }
   }
 });
 
@@ -32,6 +33,7 @@ export default {
     preset: UnifiedAura,
     options: {
       prefix: 'pv',
+      darkModeSelector: 'none',
       cssLayer: {
         name: 'primevue',
         order: 'theme, base, primevue, components, utilities'
