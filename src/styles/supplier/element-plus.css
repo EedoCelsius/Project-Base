@@ -2,12 +2,20 @@
 
 :root {
   --el-color-primary: var(--p-primary-500);
-  --el-color-primary-light-3: var(--p-primary-400);
-  --el-color-primary-light-5: var(--p-primary-300);
-  --el-color-primary-light-7: var(--p-primary-200);
-  --el-color-primary-dark-2: var(--p-primary-700);
-  --el-color-success: #22c55e;
-  --el-color-warning: #f97316;
-  --el-color-info: #0ea5e9;
-  --el-color-danger: #ef4444;
+  --el-color-primary-light-3: color-mix(in srgb, var(--p-primary-500) 70%, white 30%);
+  --el-color-primary-light-5: color-mix(in srgb, var(--p-primary-500) 55%, white 45%);
+  --el-color-primary-light-7: color-mix(in srgb, var(--p-primary-500) 35%, white 65%);
+  --el-color-primary-light-8: color-mix(in srgb, var(--p-primary-500) 25%, white 75%);
+  --el-color-primary-light-9: color-mix(in srgb, var(--p-primary-500) 15%, white 85%);
+  --el-color-primary-dark-2: color-mix(in srgb, var(--p-primary-500) 80%, black 20%);
+}
+
+:root.dark {
+  --el-color-primary: var(--p-primary-400);
+  --el-color-primary-light-3: color-mix(in srgb, var(--p-primary-400) 65%, white 35%);
+  --el-color-primary-light-5: color-mix(in srgb, var(--p-primary-400) 50%, white 50%);
+  --el-color-primary-light-7: color-mix(in srgb, var(--p-primary-400) 35%, white 65%);
+  --el-color-primary-light-8: color-mix(in srgb, var(--p-primary-400) 25%, white 75%);
+  --el-color-primary-light-9: color-mix(in srgb, var(--p-primary-400) 15%, white 85%);
+  --el-color-primary-dark-2: color-mix(in srgb, var(--p-primary-400) 82%, black 18%);
 }
