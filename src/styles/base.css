@@ -1,0 +1,59 @@
+:root {
+  --p-primary-50: #eef2ff;
+  --p-primary-100: #e0e7ff;
+  --p-primary-200: #c7d2fe;
+  --p-primary-300: #a5b4fc;
+  --p-primary-400: #818cf8;
+  --p-primary-500: #6366f1;
+  --p-primary-600: #4f46e5;
+  --p-primary-700: #4338ca;
+  --p-primary-800: #3730a3;
+  --p-primary-900: #312e81;
+
+  --surface-color: #f9fafc;
+  --surface-100: #ffffff;
+  --surface-200: #f1f5f9;
+  --border-color: rgba(15, 23, 42, 0.08);
+  --text-color: #0f172a;
+  --text-muted: #475569;
+}
+
+:root.dark {
+  --surface-color: #0b1120;
+  --surface-100: #111827;
+  --surface-200: #1f2937;
+  --border-color: rgba(148, 163, 184, 0.24);
+  --text-color: #e2e8f0;
+  --text-muted: #94a3b8;
+}
+
+body {
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.dark {
+  color-scheme: dark;
+}
+
+.bg-surface {
+  background-color: var(--surface-color);
+}
+
+.bg-surface-100 {
+  background-color: var(--surface-100);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-content {
+  color: var(--text-color);
+}
+
+.border-border {
+  border-color: var(--border-color);
+}
