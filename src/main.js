@@ -9,7 +9,7 @@ import primevueOptions from './plugins/primevue';
 import router from './router';
 
 import 'primeicons/primeicons.css';
-import './styles';
+import './styles/index.css';
 
 const app = createApp(App);
 

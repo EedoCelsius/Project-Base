@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-surface px-6 py-8 text-content">
+  <div class="px-6 py-8">
     <header class="mx-auto mb-10 w-full max-w-5xl">
       <AppHeader />
     </header>

@@ -6,11 +6,10 @@ export default {
   theme: {
     preset: Aura,
     options: {
-      prefix: 'pv',
       darkModeSelector: '.dark',
       cssLayer: {
         name: 'primevue',
-        order: 'tailwind-base, primevue, tailwind-utilities'
+        order: 'theme, base, primevue, components, utilities'
       }
     }
   }

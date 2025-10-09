@@ -1,0 +1,13 @@
+@import './supplier/tailwind.css';
+@import './supplier/primevue.css';
+@import './supplier/element-plus.css';
+
+:root {
+  color-scheme: light;
+}
+
+:root.dark {
+  color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

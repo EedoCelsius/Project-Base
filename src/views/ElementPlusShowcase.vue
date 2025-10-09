@@ -28,7 +28,7 @@
       <el-col v-for="metric in metrics" :key="metric.title" :span="8">
         <el-card shadow="never">
           <div class="text-sm text-gray-500">{{ metric.title }}</div>
-          <div class="mt-2 text-3xl font-semibold text-gray-900 dark:text-gray-100">
+          <div class="mt-2 text-3xl font-semibold">
             {{ metric.value }}
           </div>
           <p class="mt-2 text-sm text-gray-500">{{ metric.description }}</p>
