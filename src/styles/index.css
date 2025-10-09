@@ -43,8 +43,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-:root.dark,
-:root :where(.dark) {
+.dark {
   --primary-tone-0: color-mix(in srgb, var(--primary-base) 3%, white 97%);
   --primary-tone-1: color-mix(in srgb, var(--primary-base) 6%, white 94%);
   --primary-tone-2: color-mix(in srgb, var(--primary-base) 16%, white 84%);
@@ -70,9 +69,6 @@
   --surface-tone-9: color-mix(in srgb, var(--surface-base) 22%, white 78%);
   --surface-tone-10: color-mix(in srgb, var(--surface-base) 12%, white 88%);
   --surface-tone-11: color-mix(in srgb, var(--surface-base) 6%, white 94%);
-
-  --theme-surface: var(--surface-tone-10);
-  --theme-content: var(--surface-tone-1);
 
   color-scheme: dark;
 }
