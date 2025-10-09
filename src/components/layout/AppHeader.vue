@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-6 rounded-xl bg-primary/10 p-6 shadow-sm">
+  <div class="flex flex-col gap-6 rounded-xl p-6 shadow-sm">
     <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
       <div>
         <h1 class="text-2xl font-semibold">{{ t('header.title') }}</h1>

@@ -21,10 +21,10 @@
 
     <div class="grid gap-6 md:grid-cols-3">
       <Panel v-for="metric in metrics" :key="metric.title" :header="metric.title">
-        <div class="text-3xl font-semibold text-slate-900 dark:text-slate-100">
+        <div class="text-3xl font-semibold">
           {{ metric.value }}
         </div>
-        <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">
+        <p class="mt-2 text-sm">
           {{ metric.description }}
         </p>
         <Tag class="mt-4" :value="metric.status.label" :severity="metric.status.tone" rounded />
