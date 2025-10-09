@@ -2,6 +2,7 @@ import { definePreset } from '@primevue/themes';
 import Aura from '@primevue/themes/aura';
 
 const tones = (prefix) => ({
+  0: `var(--${prefix}-tone-0)`,
   50: `var(--${prefix}-tone-1)`,
   100: `var(--${prefix}-tone-2)`,
   200: `var(--${prefix}-tone-3)`,
