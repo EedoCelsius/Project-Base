@@ -58,18 +58,18 @@
   --primary-tone-10: color-mix(in srgb, var(--primary-base) 45%, black 55%);
   --primary-tone-11: color-mix(in srgb, var(--primary-base) 35%, black 65%);
 
-  --surface-tone-0: color-mix(in srgb, var(--surface-base) 6%, white 94%);
-  --surface-tone-1: color-mix(in srgb, var(--surface-base) 12%, white 88%);
-  --surface-tone-2: color-mix(in srgb, var(--surface-base) 22%, white 78%);
-  --surface-tone-3: color-mix(in srgb, var(--surface-base) 32%, white 68%);
-  --surface-tone-4: color-mix(in srgb, var(--surface-base) 42%, white 58%);
-  --surface-tone-5: color-mix(in srgb, var(--surface-base) 52%, white 48%);
-  --surface-tone-6: color-mix(in srgb, var(--surface-base) 62%, white 38%);
-  --surface-tone-7: color-mix(in srgb, var(--surface-base) 55%, black 45%);
-  --surface-tone-8: color-mix(in srgb, var(--surface-base) 45%, black 55%);
-  --surface-tone-9: color-mix(in srgb, var(--surface-base) 35%, black 65%);
-  --surface-tone-10: color-mix(in srgb, var(--surface-base) 25%, black 75%);
-  --surface-tone-11: color-mix(in srgb, var(--surface-base) 15%, black 85%);
+  --surface-tone-0: color-mix(in srgb, var(--surface-base) 15%, black 85%);
+  --surface-tone-1: color-mix(in srgb, var(--surface-base) 25%, black 75%);
+  --surface-tone-2: color-mix(in srgb, var(--surface-base) 35%, black 65%);
+  --surface-tone-3: color-mix(in srgb, var(--surface-base) 45%, black 55%);
+  --surface-tone-4: color-mix(in srgb, var(--surface-base) 55%, black 45%);
+  --surface-tone-5: color-mix(in srgb, var(--surface-base) 62%, white 38%);
+  --surface-tone-6: color-mix(in srgb, var(--surface-base) 52%, white 48%);
+  --surface-tone-7: color-mix(in srgb, var(--surface-base) 42%, white 58%);
+  --surface-tone-8: color-mix(in srgb, var(--surface-base) 32%, white 68%);
+  --surface-tone-9: color-mix(in srgb, var(--surface-base) 22%, white 78%);
+  --surface-tone-10: color-mix(in srgb, var(--surface-base) 12%, white 88%);
+  --surface-tone-11: color-mix(in srgb, var(--surface-base) 6%, white 94%);
 
   --theme-surface: var(--surface-tone-10);
   --theme-content: var(--surface-tone-1);
