@@ -1,3 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: rgb(var(--p-primary-500) / <alpha-value>);
+  --color-surface: rgb(var(--surface-color) / <alpha-value>);
+  --color-content: rgb(var(--text-color) / <alpha-value>);
+}
