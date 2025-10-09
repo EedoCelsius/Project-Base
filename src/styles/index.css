@@ -4,10 +4,71 @@
 
 :root {
   color-scheme: light;
+  --primary-base: #10b981;
+  --surface-base: #64748b;
+
+  --primary-tone-1: color-mix(in srgb, var(--primary-base) 10%, white 90%);
+  --primary-tone-2: color-mix(in srgb, var(--primary-base) 20%, white 80%);
+  --primary-tone-3: color-mix(in srgb, var(--primary-base) 30%, white 70%);
+  --primary-tone-4: color-mix(in srgb, var(--primary-base) 40%, white 60%);
+  --primary-tone-5: color-mix(in srgb, var(--primary-base) 50%, white 50%);
+  --primary-tone-6: var(--primary-base);
+  --primary-tone-7: color-mix(in srgb, var(--primary-base) 70%, black 30%);
+  --primary-tone-8: color-mix(in srgb, var(--primary-base) 60%, black 40%);
+  --primary-tone-9: color-mix(in srgb, var(--primary-base) 50%, black 50%);
+  --primary-tone-10: color-mix(in srgb, var(--primary-base) 40%, black 60%);
+  --primary-tone-11: color-mix(in srgb, var(--primary-base) 30%, black 70%);
+
+  --surface-tone-1: color-mix(in srgb, var(--surface-base) 8%, white 92%);
+  --surface-tone-2: color-mix(in srgb, var(--surface-base) 18%, white 82%);
+  --surface-tone-3: color-mix(in srgb, var(--surface-base) 28%, white 72%);
+  --surface-tone-4: color-mix(in srgb, var(--surface-base) 38%, white 62%);
+  --surface-tone-5: color-mix(in srgb, var(--surface-base) 48%, white 52%);
+  --surface-tone-6: var(--surface-base);
+  --surface-tone-7: color-mix(in srgb, var(--surface-base) 58%, black 42%);
+  --surface-tone-8: color-mix(in srgb, var(--surface-base) 48%, black 52%);
+  --surface-tone-9: color-mix(in srgb, var(--surface-base) 38%, black 62%);
+  --surface-tone-10: color-mix(in srgb, var(--surface-base) 28%, black 72%);
+  --surface-tone-11: color-mix(in srgb, var(--surface-base) 18%, black 82%);
+
+  --theme-surface: var(--surface-tone-2);
+  --theme-content: var(--surface-tone-11);
 }
 
 :root.dark {
   color-scheme: dark;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:root.dark,
+:root :where(.dark) {
+  --primary-tone-1: color-mix(in srgb, var(--primary-base) 6%, white 94%);
+  --primary-tone-2: color-mix(in srgb, var(--primary-base) 16%, white 84%);
+  --primary-tone-3: color-mix(in srgb, var(--primary-base) 26%, white 74%);
+  --primary-tone-4: color-mix(in srgb, var(--primary-base) 36%, white 64%);
+  --primary-tone-5: color-mix(in srgb, var(--primary-base) 46%, white 54%);
+  --primary-tone-6: color-mix(in srgb, var(--primary-base) 65%, white 35%);
+  --primary-tone-7: color-mix(in srgb, var(--primary-base) 75%, black 25%);
+  --primary-tone-8: color-mix(in srgb, var(--primary-base) 65%, black 35%);
+  --primary-tone-9: color-mix(in srgb, var(--primary-base) 55%, black 45%);
+  --primary-tone-10: color-mix(in srgb, var(--primary-base) 45%, black 55%);
+  --primary-tone-11: color-mix(in srgb, var(--primary-base) 35%, black 65%);
+
+  --surface-tone-1: color-mix(in srgb, var(--surface-base) 12%, white 88%);
+  --surface-tone-2: color-mix(in srgb, var(--surface-base) 22%, white 78%);
+  --surface-tone-3: color-mix(in srgb, var(--surface-base) 32%, white 68%);
+  --surface-tone-4: color-mix(in srgb, var(--surface-base) 42%, white 58%);
+  --surface-tone-5: color-mix(in srgb, var(--surface-base) 52%, white 48%);
+  --surface-tone-6: color-mix(in srgb, var(--surface-base) 62%, white 38%);
+  --surface-tone-7: color-mix(in srgb, var(--surface-base) 55%, black 45%);
+  --surface-tone-8: color-mix(in srgb, var(--surface-base) 45%, black 55%);
+  --surface-tone-9: color-mix(in srgb, var(--surface-base) 35%, black 65%);
+  --surface-tone-10: color-mix(in srgb, var(--surface-base) 25%, black 75%);
+  --surface-tone-11: color-mix(in srgb, var(--surface-base) 15%, black 85%);
+
+  --theme-surface: var(--surface-tone-10);
+  --theme-content: var(--surface-tone-1);
+
+  color-scheme: dark;
 }
