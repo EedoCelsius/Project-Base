@@ -6,6 +6,7 @@ export default {
   theme: {
     preset: Aura,
     options: {
+      prefix: 'pv',
       darkModeSelector: '.dark',
       cssLayer: {
         name: 'primevue',
