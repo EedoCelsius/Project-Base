@@ -48,8 +48,8 @@
   }
   
   .dark {
-    --primary-dark-base: #047857;
-    --surface-dark-base: #1f2937;
+    /* --primary-dark-base: #047857; */
+    --surface-dark-base: #1d293d;
     --primary-base: var(--primary-dark-base, var(--primary-base-default));
     --surface-base: var(--surface-dark-base, var(--surface-base-default));
 
