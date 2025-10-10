@@ -8,4 +8,29 @@
   --el-color-primary-light-8: var(--primary-tone-2);
   --el-color-primary-light-9: var(--primary-tone-1);
   --el-color-primary-dark-2: var(--primary-tone-8);
+
+  --el-bg-color: var(--surface-tone-0);
+  --el-bg-color-page: var(--surface-tone-1);
+  --el-bg-color-overlay: var(--surface-tone-0);
+
+  --el-text-color-primary: var(--surface-tone-11);
+  --el-text-color-regular: var(--surface-tone-9);
+  --el-text-color-secondary: var(--surface-tone-7);
+  --el-text-color-placeholder: var(--surface-tone-6);
+  --el-text-color-disabled: var(--surface-tone-5);
+
+  --el-border-color: var(--surface-tone-4);
+  --el-border-color-light: var(--surface-tone-3);
+  --el-border-color-lighter: var(--surface-tone-2);
+  --el-border-color-extra-light: var(--surface-tone-1);
+  --el-border-color-dark: var(--surface-tone-5);
+  --el-border-color-darker: var(--surface-tone-6);
+
+  --el-fill-color: var(--surface-tone-2);
+  --el-fill-color-light: var(--surface-tone-1);
+  --el-fill-color-lighter: var(--surface-tone-0);
+  --el-fill-color-extra-light: var(--surface-tone-0);
+  --el-fill-color-dark: var(--surface-tone-3);
+  --el-fill-color-darker: var(--surface-tone-4);
+  --el-fill-color-blank: var(--surface-tone-0);
 }
