@@ -34,7 +34,7 @@ export default {
     preset: UnifiedAura,
     options: {
       prefix: 'pv',
-      darkModeSelector: '.dark, [data-theme="dark"]',
+      darkModeSelector: 'none',
       cssLayer: {
         name: 'primevue',
         order: 'color-base, theme, base, primevue, components, utilities'

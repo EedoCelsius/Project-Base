@@ -22,17 +22,8 @@ const syncTheme = (value) => {
     return;
   }
 
-  const themeAttribute = value ? 'dark' : null;
-
   document.documentElement.classList.toggle('dark', value);
   document.body.classList.toggle('dark', value);
-  if (themeAttribute) {
-    document.documentElement.dataset.theme = themeAttribute;
-    document.body.dataset.theme = themeAttribute;
-  } else {
-    delete document.documentElement.dataset.theme;
-    delete document.body.dataset.theme;
-  }
 };
 
 watch(
