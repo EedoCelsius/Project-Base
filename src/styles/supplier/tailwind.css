@@ -1,4 +1,31 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
+  --color-primary-0: var(--primary-tone-0);
+  --color-primary-1: var(--primary-tone-1);
+  --color-primary-2: var(--primary-tone-2);
+  --color-primary-3: var(--primary-tone-3);
+  --color-primary-4: var(--primary-tone-4);
+  --color-primary-5: var(--primary-tone-5);
+  --color-primary-6: var(--primary-tone-6);
+  --color-primary-7: var(--primary-tone-7);
+  --color-primary-8: var(--primary-tone-8);
+  --color-primary-9: var(--primary-tone-9);
+  --color-primary-10: var(--primary-tone-10);
+  --color-primary-11: var(--primary-tone-11);
+
+  --color-surface-0: var(--surface-tone-0);
+  --color-surface-1: var(--surface-tone-1);
+  --color-surface-2: var(--surface-tone-2);
+  --color-surface-3: var(--surface-tone-3);
+  --color-surface-4: var(--surface-tone-4);
+  --color-surface-5: var(--surface-tone-5);
+  --color-surface-6: var(--surface-tone-6);
+  --color-surface-7: var(--surface-tone-7);
+  --color-surface-8: var(--surface-tone-8);
+  --color-surface-9: var(--surface-tone-9);
+  --color-surface-10: var(--surface-tone-10);
+  --color-surface-11: var(--surface-tone-11);
 }
