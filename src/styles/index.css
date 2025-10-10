@@ -42,9 +42,6 @@
     --surface-tone-9: color-mix(in srgb, var(--surface-base) 45%, black 55%);
     --surface-tone-10: color-mix(in srgb, var(--surface-base) 35%, black 65%);
     --surface-tone-11: color-mix(in srgb, var(--surface-base) 25%, black 75%);
-  
-    --theme-surface: var(--surface-tone-2);
-    --theme-content: var(--surface-tone-11);
   }
   
   .dark {
