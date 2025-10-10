@@ -37,7 +37,7 @@ export default {
       darkModeSelector: 'none',
       cssLayer: {
         name: 'primevue',
-        order: 'theme, base, primevue, components, utilities'
+        order: 'color-base, theme, base, primevue, components, utilities'
       }
     }
   }
