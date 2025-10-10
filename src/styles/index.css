@@ -6,7 +6,8 @@
   color-scheme: light;
 }
 
-:root.dark {
+:root.dark,
+:root[data-theme='dark'] {
   color-scheme: dark;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -47,7 +48,7 @@
     --theme-content: var(--surface-tone-11);
   }
   
-  .dark {
+  :is(.dark, [data-theme='dark']) {
     --primary-tone-0: color-mix(in srgb, var(--primary-base) 3%, white 97%);
     --primary-tone-1: color-mix(in srgb, var(--primary-base) 6%, white 94%);
     --primary-tone-2: color-mix(in srgb, var(--primary-base) 16%, white 84%);
