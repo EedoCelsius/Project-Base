@@ -1,9 +1,4 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primary: var(--primary-tone-6);
-  --color-primary-foreground: var(--theme-content);
-  --color-surface: var(--theme-surface);
-  --color-surface-foreground: var(--theme-content);
-  --color-content: var(--theme-content);
 }
