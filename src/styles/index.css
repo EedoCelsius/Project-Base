@@ -15,7 +15,7 @@
 @layer color-base {
   :root {
     --primary-base: #10b981;
-    --surface-base: #64748b;
+    --surface-base: #0f172b;
   
     --primary-tone-0: color-mix(in srgb, var(--primary-base) 5%, white 95%);
     --primary-tone-1: color-mix(in srgb, var(--primary-base) 15%, white 85%);
