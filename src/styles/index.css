@@ -15,10 +15,7 @@
 @layer color-base {
   :root {
     --primary-base-default: #10b981;
-    /* --primary-dark-base: #047857; */
-
     --surface-base-default: #64748b;
-    /* --surface-dark-base: #1f2937; */
 
     --primary-base: var(--primary-base-default);
     --surface-base: var(--surface-base-default);
@@ -51,6 +48,8 @@
   }
   
   .dark {
+    --primary-dark-base: #047857; */
+    /* --surface-dark-base: #1f2937;
     --primary-base: var(--primary-dark-base, var(--primary-base-default));
     --surface-base: var(--surface-dark-base, var(--surface-base-default));
 
