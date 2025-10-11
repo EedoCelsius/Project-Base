@@ -24,14 +24,14 @@ const props = defineProps({
 
 const toneClass = computed(() => {
   if (props.tone === 'primary') {
-    return 'bg-indigo-600 text-white hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400';
+    return 'bg-primary-500 text-surface-0 hover:bg-primary-600';
   }
 
   if (props.outlined) {
-    return 'border border-indigo-500 text-indigo-600 hover:bg-indigo-50 dark:border-indigo-400 dark:text-indigo-200 dark:hover:bg-indigo-500/10';
+    return 'border border-primary-500 text-primary-600 hover:bg-primary-50';
   }
 
-  return 'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700';
+  return 'bg-surface-100 text-surface-700 hover:bg-surface-200';
 });
 
 defineOptions({
