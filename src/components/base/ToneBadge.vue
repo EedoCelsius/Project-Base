@@ -16,14 +16,14 @@ const props = defineProps({
 
 const toneClass = computed(() => {
   if (props.tone === 'success') {
-    return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300';
+    return 'bg-success-100 text-success-700';
   }
 
   if (props.tone === 'warning') {
-    return 'bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-300';
+    return 'bg-warning-100 text-warning-700';
   }
 
-  return 'bg-sky-100 text-sky-700 dark:bg-sky-500/10 dark:text-sky-300';
+  return 'bg-info-100 text-info-700';
 });
 
 defineOptions({
