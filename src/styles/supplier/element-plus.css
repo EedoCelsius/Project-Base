@@ -33,4 +33,44 @@
   --el-fill-color-dark: var(--surface-tone-3);
   --el-fill-color-darker: var(--surface-tone-4);
   --el-fill-color-blank: var(--surface-tone-0);
+
+  --el-color-success: var(--success-tone-6);
+  --el-color-success-light-3: var(--success-tone-5);
+  --el-color-success-light-5: var(--success-tone-4);
+  --el-color-success-light-7: var(--success-tone-3);
+  --el-color-success-light-8: var(--success-tone-2);
+  --el-color-success-light-9: var(--success-tone-1);
+  --el-color-success-dark-2: var(--success-tone-8);
+
+  --el-color-warning: var(--warning-tone-6);
+  --el-color-warning-light-3: var(--warning-tone-5);
+  --el-color-warning-light-5: var(--warning-tone-4);
+  --el-color-warning-light-7: var(--warning-tone-3);
+  --el-color-warning-light-8: var(--warning-tone-2);
+  --el-color-warning-light-9: var(--warning-tone-1);
+  --el-color-warning-dark-2: var(--warning-tone-8);
+
+  --el-color-danger: var(--danger-tone-6);
+  --el-color-danger-light-3: var(--danger-tone-5);
+  --el-color-danger-light-5: var(--danger-tone-4);
+  --el-color-danger-light-7: var(--danger-tone-3);
+  --el-color-danger-light-8: var(--danger-tone-2);
+  --el-color-danger-light-9: var(--danger-tone-1);
+  --el-color-danger-dark-2: var(--danger-tone-8);
+
+  --el-color-error: var(--error-tone-6);
+  --el-color-error-light-3: var(--error-tone-5);
+  --el-color-error-light-5: var(--error-tone-4);
+  --el-color-error-light-7: var(--error-tone-3);
+  --el-color-error-light-8: var(--error-tone-2);
+  --el-color-error-light-9: var(--error-tone-1);
+  --el-color-error-dark-2: var(--error-tone-8);
+
+  --el-color-info: var(--info-tone-6);
+  --el-color-info-light-3: var(--info-tone-5);
+  --el-color-info-light-5: var(--info-tone-4);
+  --el-color-info-light-7: var(--info-tone-3);
+  --el-color-info-light-8: var(--info-tone-2);
+  --el-color-info-light-9: var(--info-tone-1);
+  --el-color-info-dark-2: var(--info-tone-8);
 }
