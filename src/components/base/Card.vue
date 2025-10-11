@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100 dark:bg-slate-900 dark:ring-slate-800">
+  <div class="rounded-2xl bg-surface-0 p-6 shadow-sm ring-1 ring-surface-100">
     <slot />
   </div>
 </template>
