@@ -60,3 +60,4 @@ GitHub Actions가 `main` 브랜치로 푸시될 때 자동으로 빌드하고 Gi
 - [Tailwind CSS 문서](https://tailwindcss.com/)
 - [Pinia 문서](https://pinia.vuejs.org/)
 - [Vue I18n 문서](https://vue-i18n.intlify.dev/)
+- [Vue Router 문서](https://router.vuejs.org/)
