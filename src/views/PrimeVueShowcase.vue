@@ -25,7 +25,7 @@
               v-for="tag in hero.tags"
               :key="tag.label"
               :value="tag.label"
-              :severity="tag.tone"
+              :severity="toSeverity(tag.tone)"
               rounded
             />
           </div>
@@ -46,7 +46,12 @@
             <p class="text-sm text-surface-600">
               {{ metric.description }}
             </p>
-            <Tag class="mt-2" :value="metric.status.label" :severity="metric.status.tone" rounded />
+            <Tag
+              class="mt-2"
+              :value="metric.status.label"
+              :severity="toSeverity(metric.status.tone)"
+              rounded
+            />
           </div>
         </template>
       </Card>
@@ -72,7 +77,7 @@
           <Column field="owner" header="Owner" />
           <Column header="Status">
             <template #body="{ data }">
-              <Tag :value="data.status.label" :severity="data.status.tone" rounded />
+              <Tag :value="data.status.label" :severity="toSeverity(data.status.tone)" rounded />
             </template>
           </Column>
         </DataTable>
@@ -90,4 +95,6 @@ import Tag from 'primevue/tag';
 import { useShowcaseContent } from '@/composables/useShowcaseContent';
 
 const { hero, metrics, updates } = useShowcaseContent();
+
+const toSeverity = (tone) => (tone === 'warning' ? 'warn' : tone);
 </script>
