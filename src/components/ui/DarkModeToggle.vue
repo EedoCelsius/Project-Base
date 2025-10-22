@@ -1,7 +1,6 @@
 <template>
   <el-switch
     v-model="isDark"
-    class="dark-mode-switch"
     :active-text="t('preferences.theme.dark')"
     :inactive-text="t('preferences.theme.light')"
     inline-prompt
@@ -35,22 +34,19 @@ export default {
 </script>
 
 <style scoped>
-.dark-mode-switch :deep(.el-switch__core) {
-  min-width: 3.5rem;
-  box-shadow: inset 0 4px 6px 2px rgba(225, 0, 0, 0.5);
-  --el-switch-off-color: #ffbf0e;
+--switch-shadow-color: rgba(225, 0, 0, 0.5);
+.dark {
+  --switch-shadow-color: rgba(0, 0, 225, 0.5);
 }
 
-.dark-mode-switch :deep(.el-switch.is-checked .el-switch__core) {
-  box-shadow: inset 0 4px 6px 2px rgba(0, 0, 225, 0.5);
+:deep(.el-switch__core) {
+  min-width: 3.5rem;
+  box-shadow: inset 0 4px 6px 2px var(--switch-shadow-color);
+  --el-switch-off-color: #ffbf0e;
   --el-switch-on-color: #0081ec;
 }
 
-.dark-mode-switch :deep(.el-switch__action) {
-  box-shadow: 0px 0px 4px 1px rgba(225, 0, 0, 0.25);
-}
-
-.dark-mode-switch :deep(.el-switch.is-checked .el-switch__action) {
-  box-shadow: 0px 0px 4px 1px rgba(0, 0, 225, 0.25);
+:deep(.el-switch__action) {
+  box-shadow: 0px 0px 4px 1px var(--switch-shadow-color);
 }
 </style>
