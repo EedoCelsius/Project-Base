@@ -1,5 +1,6 @@
 <template>
   <el-switch
+    class="dark-mode-toggle"
     v-model="isDark"
     :active-text="t('preferences.theme.dark')"
     :inactive-text="t('preferences.theme.light')"
@@ -34,8 +35,11 @@ export default {
 </script>
 
 <style scoped>
---switch-shadow-color: rgba(225, 0, 0, 0.5);
-.dark {
+.dark-mode-toggle {
+  --switch-shadow-color: rgba(225, 0, 0, 0.5);
+}
+
+:global(.dark) .dark-mode-toggle {
   --switch-shadow-color: rgba(0, 0, 225, 0.5);
 }
 
