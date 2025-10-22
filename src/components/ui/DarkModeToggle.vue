@@ -1,6 +1,5 @@
 <template>
   <el-switch
-    class="dark-mode-toggle"
     v-model="isDark"
     :active-text="t('preferences.theme.dark')"
     :inactive-text="t('preferences.theme.light')"
