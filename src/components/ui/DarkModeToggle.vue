@@ -4,6 +4,7 @@
     v-model="isDark"
     :active-text="t('preferences.theme.dark')"
     :inactive-text="t('preferences.theme.light')"
+    :style="{ '--switch-shadow-color': switchShadowColor }"
     inline-prompt
   />
 </template>
@@ -26,8 +27,13 @@ export default {
       }
     });
 
+    const switchShadowColor = computed(() =>
+      isDark.value ? 'rgba(0, 0, 225, 0.5)' : 'rgba(225, 0, 0, 0.5)'
+    );
+
     return {
       isDark,
+      switchShadowColor,
       t
     };
   }
@@ -35,14 +41,6 @@ export default {
 </script>
 
 <style scoped>
-.dark-mode-toggle {
-  --switch-shadow-color: rgba(225, 0, 0, 0.5);
-}
-
-:global(.dark) .dark-mode-toggle {
-  --switch-shadow-color: rgba(0, 0, 225, 0.5);
-}
-
 :deep(.el-switch__core) {
   min-width: 3.5rem;
   box-shadow: inset 0 4px 6px 2px var(--switch-shadow-color);
