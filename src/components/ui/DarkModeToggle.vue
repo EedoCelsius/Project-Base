@@ -35,7 +35,22 @@ export default {
 </script>
 
 <style scoped>
-.dark-mode-switch :deep(.el-switch__core) {
+.el-switch__core {
   min-width: 3.5rem;
+  box-shadow: inset 0 4px 6px 2px rgba(225, 0, 0, 0.5);
+  --el-switch-off-color: #ffbf0e;
+  
+  .is-checked {
+    box-shadow: inset 0 4px 6px 2px rgba(0, 0, 225, 0.5);
+    --el-switch-on-color: #0081ec;
+  }
+}
+
+.el-switch__action {
+  box-shadow: 0px 0px 4px 1px rgba(225, 0, 0, 0.25);
+  
+  .is-checked {
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 225, 0.25);
+  }
 }
 </style>
