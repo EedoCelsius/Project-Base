@@ -52,7 +52,7 @@ export default {
   min-width: 3.75rem;
   min-height: 1.35rem;
   border-radius: calc(infinity * 1px);
-  box-shadow: inset 0 3px 6px 1px var(--switch-shadow-color)
+  box-shadow: inset 0 3px 6px 1px var(--switch-shadow-color);
   --el-switch-off-color: #ffbf0e;
   --el-switch-on-color: #0081ec;
 }
