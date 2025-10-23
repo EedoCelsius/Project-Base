@@ -49,7 +49,7 @@ export default {
 
 <style scoped>
 :deep(.el-switch__core) {
-  min-width: 3.5rem;
+  min-width: 3.75rem;
   min-height: 1.5rem;
   border-radius: calc(infinity * 1px);
   box-shadow: inset 0 4px 6px 2px var(--switch-shadow-color);
@@ -58,9 +58,7 @@ export default {
 }
 
 :deep(.el-switch__action) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding-top: 0.08rem;
   box-shadow: 0px 0px 4px 1px var(--switch-shadow-color);
 }
 
