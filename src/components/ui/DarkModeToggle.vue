@@ -1,6 +1,6 @@
 <template>
   <el-switch
-    v-model="preferences.darkMode"
+    v-model="isDarkMode"
     :active-text="t('preferences.theme.dark')"
     :inactive-text="t('preferences.theme.light')"
     :style="switchStyles"
@@ -23,16 +23,16 @@ import { useI18n } from 'vue-i18n';
 export default {
   name: 'DarkModeToggle',
   setup() {
-    const preferences = usePreferencesStore();
+    const { isDarkMode } = usePreferencesStore();
     const { t } = useI18n();
 
     const switchStyles = computed(() => ({
-      '--switch-shadow-color': preferences.darkMode ? 'rgba(0, 0, 225, 0.5)' : 'rgba(225, 0, 0, 0.5)',
-      '--switch-text-color': preferences.darkMode ? '#012773' : '#fefbd9'
+      '--switch-shadow-color': isDarkMode ? 'rgba(0, 0, 225, 0.5)' : 'rgba(225, 0, 0, 0.5)',
+      '--switch-text-color': isDarkMode ? '#012773' : '#fefbd9'
     }));
 
     return {
-      preferences,
+      isDarkMode,
       switchStyles,
       t
     };
