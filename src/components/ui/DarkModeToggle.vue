@@ -3,9 +3,16 @@
     v-model="isDark"
     :active-text="t('preferences.theme.dark')"
     :inactive-text="t('preferences.theme.light')"
-    :style="{ '--switch-shadow-color': switchShadowColor }"
+    :style="switchStyles"
     inline-prompt
-  />
+  >
+    <template #inactive-action>
+      <i class="pi pi-sun" aria-hidden="true"></i>
+    </template>
+    <template #active-action>
+      <i class="pi pi-moon" aria-hidden="true"></i>
+    </template>
+  </el-switch>
 </template>
 
 <script>
@@ -26,13 +33,14 @@ export default {
       }
     });
 
-    const switchShadowColor = computed(() =>
-      isDark.value ? 'rgba(0, 0, 225, 0.5)' : 'rgba(225, 0, 0, 0.5)'
-    );
+    const switchStyles = computed(() => ({
+      '--switch-shadow-color': isDark.value ? 'rgba(0, 0, 225, 0.5)' : 'rgba(225, 0, 0, 0.5)',
+      '--switch-text-color': isDark.value ? '#012773' : '#fefbd9'
+    }));
 
     return {
       isDark,
-      switchShadowColor,
+      switchStyles,
       t
     };
   }
@@ -49,5 +57,9 @@ export default {
 
 :deep(.el-switch__action) {
   box-shadow: 0px 0px 4px 1px var(--switch-shadow-color);
+}
+
+:deep(.is-text) {
+  color: var(--switch-text-color);
 }
 </style>
