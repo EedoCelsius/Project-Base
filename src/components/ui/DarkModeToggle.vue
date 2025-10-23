@@ -58,12 +58,11 @@ export default {
 }
 
 :deep(.el-switch__action) {
-  padding-top: 0.08rem;
   box-shadow: 0px 0px 4px 1px var(--switch-shadow-color);
 }
 
 :deep(.el-switch__action i) {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 :deep(.el-switch__core .el-switch__inner .is-text) {
