@@ -22,11 +22,11 @@ GitHub Actions가 `main` 브랜치로 푸시될 때 자동으로 빌드하고 Gi
 │   │   ├── base/           # 프로젝트 전반에서 재사용 가능한 기본 컴포넌트
 │   │   ├── layout/         # 레이아웃 관련 컴포넌트 (AppShell 등)
 │   │   └── ui/             # 기능 단위 UI 컴포넌트 (LocaleSwitcher, DarkModeToggle 등)
-│   ├── composables/        # 여러 컴포넌트에서 재사용하는 로직(useToggle 등)
+│   ├── composables/        # 여러 컴포넌트에서 재사용하는 로직(showcaseContent 등)
 │   ├── locales/            # Vue I18n 다국어 리소스 (en, ko)
 │   ├── plugins/            # 라이브러리 설정(i18n, PrimeVue 옵션 등)
 │   ├── router/             # Vue Router 설정 및 라우트 선언(index.js)
-│   ├── stores/             # Pinia 스토어 정의(usePreferencesStore 등)
+│   ├── stores/             # Pinia 스토어 정의(preferences 등)
 │   ├── styles/
 │       ├── index.js        # PrimeVue/Element Plus/Tailwind 공급자 + 전역 스타일 번들러
 │       ├── base.css        # CSS 변수 및 전역 유틸리티
@@ -42,7 +42,7 @@ GitHub Actions가 `main` 브랜치로 푸시될 때 자동으로 빌드하고 Gi
 ## 주요 기능
 
 - **UI 통합**: PrimeVue 테마를 기본으로 공급자별 CSS가 `src/styles/supplier/`에서 CSS `var()`를 통해 동일한 팔레트를 공유합니다.
-- **상태 관리**: Pinia 스토어 예시(usePreferencesStore)와 컴포저블(useToggle)을 제공하여 재사용 패턴을 안내합니다.
+- **상태 관리**: Pinia 스토어 예시(preferences)와 컴포저블(showcaseContent)을 제공하여 재사용 패턴을 안내합니다.
 - **국제화**: Vue I18n이 영어/한국어 번역을 제공하며 LocaleSwitcher 컴포넌트에서 손쉽게 언어 전환이 가능합니다.
 - **라우팅**: Vue Router가 구성되어 있으며 Home/Guide/Components 뷰 스캐폴드가 `src/views/`에 포함됩니다.
 - **스타일링**: Tailwind CSS가 기본 구성되어 있으며 전역 색상 및 서페이스 토큰을 CSS 변수로 관리합니다.

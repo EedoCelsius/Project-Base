@@ -69,7 +69,7 @@
 import ActionButton from '@/components/base/ActionButton.vue';
 import Card from '@/components/base/Card.vue';
 import ToneBadge from '@/components/base/ToneBadge.vue';
-import { useShowcaseContent } from '@/composables/useShowcaseContent';
+import { useShowcaseContent } from '@/composables/showcaseContent';
 
 const { hero, metrics, updates } = useShowcaseContent();
 </script>

@@ -87,7 +87,7 @@ import Card from 'primevue/card';
 import Column from 'primevue/column';
 import DataTable from 'primevue/datatable';
 import Tag from 'primevue/tag';
-import { useShowcaseContent } from '@/composables/useShowcaseContent';
+import { useShowcaseContent } from '@/composables/showcaseContent';
 
 const { hero, metrics, updates } = useShowcaseContent();
 </script>
