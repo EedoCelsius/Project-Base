@@ -10,27 +10,9 @@
 </template>
 
 <script setup>
-import { watch } from 'vue';
 import { RouterView } from 'vue-router';
 import AppHeader from '@/components/layout/AppHeader.vue';
 import { usePreferencesStore } from '@/stores/usePreferencesStore';
 
-const preferences = usePreferencesStore();
-
-const syncTheme = (value) => {
-  if (typeof document === 'undefined') {
-    return;
-  }
-
-  document.documentElement.classList.toggle('dark', value);
-  document.body.classList.toggle('dark', value);
-};
-
-watch(
-  () => preferences.darkMode,
-  (value) => {
-    syncTheme(value);
-  },
-  { immediate: true }
-);
+usePreferencesStore();
 </script>

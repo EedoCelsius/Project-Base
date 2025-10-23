@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@primevue/themes": "^4.4.1",
+    "@vueuse/core": "^14.0.0",
     "element-plus": "^2.8.4",
     "pinia": "^3.0.3",
     "primeicons": "^7.0.0",
@@ -19,8 +20,8 @@
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.1",
     "@tailwindcss/vite": "^4.1.14",
+    "@vitejs/plugin-vue": "^6.0.1",
     "tailwindcss": "^4.1.14",
     "vite": "^7.1.9"
   }

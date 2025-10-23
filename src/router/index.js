@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { useTitle } from '@vueuse/core';
 import i18n from '@/plugins/i18n';
 
 const routes = [
@@ -33,19 +34,13 @@ const router = createRouter({
   routes
 });
 
+const title = useTitle();
+
 router.afterEach((to) => {
-  if (typeof document === 'undefined') {
-    return;
-  }
-
   const baseTitle = i18n.global.t('header.title');
-  if (!to.meta?.titleKey) {
-    document.title = baseTitle;
-    return;
-  }
+  const pageTitle = to.meta?.titleKey ? i18n.global.t(to.meta.titleKey) : null;
 
-  const pageTitle = i18n.global.t(to.meta.titleKey);
-  document.title = `${pageTitle} | ${baseTitle}`;
+  title.value = pageTitle ? `${pageTitle} | ${baseTitle}` : baseTitle;
 });
 
 export default router;

@@ -1,6 +1,6 @@
 # Vue 3 Project Base
 
-새로운 Vue 3 프로젝트를 빠르게 시작할 수 있도록 PrimeVue, Element Plus, Tailwind CSS, Pinia, Vue I18n와 Vue Router을 기본으로 구성한 베이스 템플릿입니다. TypeScript 없이 옵션 API 위주로 작성되어 있으며 재사용 가능한 컴포넌트와 컴포저블, 전역 상태 예제가 포함되어 있습니다.
+새로운 Vue 3 프로젝트를 빠르게 시작할 수 있도록 PrimeVue, Element Plus, Tailwind CSS, Pinia, Vue I18n, Vue Router, VueUse를 기본으로 구성한 베이스 템플릿입니다. TypeScript 없이 옵션 API 위주로 작성되어 있으며 재사용 가능한 컴포넌트와 컴포저블, 전역 상태 예제가 포함되어 있습니다.
 
 ## 시작하기
 
@@ -47,6 +47,7 @@ GitHub Actions가 `main` 브랜치로 푸시될 때 자동으로 빌드하고 Gi
 - **라우팅**: Vue Router가 구성되어 있으며 Home/Guide/Components 뷰 스캐폴드가 `src/views/`에 포함됩니다.
 - **스타일링**: Tailwind CSS가 기본 구성되어 있으며 전역 색상 및 서페이스 토큰을 CSS 변수로 관리합니다.
 - **테마 토글**: 헤더의 다크 모드 스위치가 Pinia 스토어와 연동되어 CSS 변수 기반 라이트/다크 팔레트를 전환합니다.
+- **VueUse 유틸리티**: VueUse의 `useDark`와 `useTitle`을 활용해 테마 전환과 문서 타이틀 동기화를 간소화했습니다.
 - **배포 자동화**: GitHub Actions를 통해 빌드 후 GitHub Pages에 자동 배포됩니다.
 
 ## 커스텀 컴포넌트 스캐폴드
@@ -61,3 +62,4 @@ GitHub Actions가 `main` 브랜치로 푸시될 때 자동으로 빌드하고 Gi
 - [Pinia 문서](https://pinia.vuejs.org/)
 - [Vue I18n 문서](https://vue-i18n.intlify.dev/)
 - [Vue Router 문서](https://router.vuejs.org/)
+- [VueUse 문서](https://vueuse.org/)
