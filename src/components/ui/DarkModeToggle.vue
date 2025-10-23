@@ -1,6 +1,6 @@
 <template>
   <el-switch
-    v-model="isDark"
+    v-model="preferences.darkMode"
     :active-text="t('preferences.theme.dark')"
     :inactive-text="t('preferences.theme.light')"
     :style="switchStyles"
@@ -17,7 +17,6 @@
 
 <script>
 import { computed } from 'vue';
-import { storeToRefs } from 'pinia';
 import { usePreferencesStore } from '@/stores/usePreferencesStore';
 import { useI18n } from 'vue-i18n';
 
@@ -25,23 +24,15 @@ export default {
   name: 'DarkModeToggle',
   setup() {
     const preferences = usePreferencesStore();
-    const { darkMode } = storeToRefs(preferences);
     const { t } = useI18n();
 
-    const isDark = computed({
-      get: () => darkMode.value,
-      set: (value) => {
-        preferences.toggleDarkMode(value);
-      }
-    });
-
     const switchStyles = computed(() => ({
-      '--switch-shadow-color': isDark.value ? 'rgba(0, 0, 225, 0.5)' : 'rgba(225, 0, 0, 0.5)',
-      '--switch-text-color': isDark.value ? '#012773' : '#fefbd9'
+      '--switch-shadow-color': preferences.darkMode ? 'rgba(0, 0, 225, 0.5)' : 'rgba(225, 0, 0, 0.5)',
+      '--switch-text-color': preferences.darkMode ? '#012773' : '#fefbd9'
     }));
 
     return {
-      isDark,
+      preferences,
       switchStyles,
       t
     };
