@@ -50,16 +50,25 @@ export default {
 <style scoped>
 :deep(.el-switch__core) {
   min-width: 3.5rem;
+  min-height: 1.5rem;
+  border-radius: calc(infinity * 1px);
   box-shadow: inset 0 4px 6px 2px var(--switch-shadow-color);
   --el-switch-off-color: #ffbf0e;
   --el-switch-on-color: #0081ec;
 }
 
 :deep(.el-switch__action) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0px 0px 4px 1px var(--switch-shadow-color);
 }
 
-:deep(.is-text) {
+:deep(.el-switch__action i) {
+  font-size: 0.8rem;
+}
+
+:deep(.el-switch__core .el-switch__inner .is-text) {
   color: var(--switch-text-color);
 }
 </style>
