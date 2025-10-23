@@ -57,7 +57,7 @@
 </template>
 
 <script setup>
-import { useShowcaseContent } from '@/composables/useShowcaseContent';
+import { useShowcaseContent } from '@/composables/showcaseContent';
 
 const { hero, metrics, updates } = useShowcaseContent();
 

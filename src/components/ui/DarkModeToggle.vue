@@ -17,7 +17,7 @@
 
 <script>
 import { computed } from 'vue';
-import { usePreferencesStore } from '@/stores/usePreferencesStore';
+import { usePreferencesStore } from '@/stores/preferences';
 import { useI18n } from 'vue-i18n';
 
 export default {
