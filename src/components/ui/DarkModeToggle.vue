@@ -7,10 +7,10 @@
     inline-prompt
   >
     <template #inactive-action>
-      <i class="pi pi-sun" aria-hidden="true"></i>
+      <i class="bx bxs-sun" aria-hidden="true"></i>
     </template>
     <template #active-action>
-      <i class="pi pi-moon" aria-hidden="true"></i>
+      <i class="bx bxs-moon-star" aria-hidden="true"></i>
     </template>
   </el-switch>
 </template>
