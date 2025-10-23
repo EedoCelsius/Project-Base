@@ -68,5 +68,6 @@ export default {
 
 :deep(.el-switch__core .el-switch__inner .is-text) {
   color: var(--switch-text-color);
+  font-weight: bold;
 }
 </style>
