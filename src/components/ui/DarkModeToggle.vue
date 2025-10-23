@@ -61,10 +61,6 @@ export default {
   box-shadow: 0px 0px 4px 1px var(--switch-shadow-color);
 }
 
-:deep(.el-switch__action i) {
-  font-size: 0.9rem;
-}
-
 :deep(.el-switch__core .el-switch__inner .is-text) {
   color: var(--switch-text-color);
   font-weight: bold;
