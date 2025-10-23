@@ -17,6 +17,7 @@
 
 <script>
 import { computed } from 'vue';
+import { storeToRefs } from 'pinia';
 import { usePreferencesStore } from '@/stores/usePreferencesStore';
 import { useI18n } from 'vue-i18n';
 
@@ -24,10 +25,11 @@ export default {
   name: 'DarkModeToggle',
   setup() {
     const preferences = usePreferencesStore();
+    const { darkMode } = storeToRefs(preferences);
     const { t } = useI18n();
 
     const isDark = computed({
-      get: () => preferences.darkMode,
+      get: () => darkMode.value,
       set: (value) => {
         preferences.toggleDarkMode(value);
       }

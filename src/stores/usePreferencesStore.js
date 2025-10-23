@@ -1,17 +1,18 @@
 import { defineStore } from 'pinia';
+import { useDark } from '@vueuse/core';
 
-export const usePreferencesStore = defineStore('preferences', {
-  state: () => ({
-    darkMode: false
-  }),
-  actions: {
-    toggleDarkMode(value) {
-      if (typeof value === 'boolean') {
-        this.darkMode = value;
-        return;
-      }
+export const usePreferencesStore = defineStore('preferences', () => {
+  const darkMode = useDark({
+    selector: 'body',
+    storageKey: 'preferences-color-scheme'
+  });
 
-      this.darkMode = !this.darkMode;
-    }
-  }
+  const toggleDarkMode = (value) => {
+    darkMode.value = value ?? !darkMode.value;
+  };
+
+  return {
+    darkMode,
+    toggleDarkMode
+  };
 });
