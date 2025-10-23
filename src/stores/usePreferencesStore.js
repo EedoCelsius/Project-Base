@@ -3,7 +3,7 @@ import { useDark, useToggle } from '@vueuse/core';
 
 export const usePreferencesStore = defineStore('preferences', () => {
   const isDarkMode = useDark({
-    selector: 'body',
+    selector: 'html',
     storageKey: 'preferences-color-scheme'
   });
 
