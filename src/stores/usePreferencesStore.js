@@ -4,7 +4,8 @@ import { useDark, useToggle } from '@vueuse/core';
 export const usePreferencesStore = defineStore('preferences', () => {
   const isDarkMode = useDark({
     selector: 'html',
-    storageKey: 'preferences-color-scheme'
+    storageKey: 'preferences-color-scheme',
+    disableTransition: false
   });
 
   const toggleDarkMode = useToggle(isDarkMode);
