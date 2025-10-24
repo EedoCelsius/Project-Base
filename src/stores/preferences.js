@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
-import { useDark, useToggle } from '@vueuse/core';
+import { useDark } from '@vueuse/core';
+import i18n from '@/plugins/i18n';
 
 export const usePreferencesStore = defineStore('preferences', () => {
   const isDarkMode = useDark({
@@ -8,7 +9,7 @@ export const usePreferencesStore = defineStore('preferences', () => {
     disableTransition: false
   });
 
-  const toggleDarkMode = useToggle(isDarkMode);
+  const locale = i18n.global.locale;
 
-  return { isDarkMode, toggleDarkMode };
+  return { isDarkMode, locale };
 });
