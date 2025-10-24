@@ -37,9 +37,6 @@ GitHub Actions가 `main` 브랜치로 푸시될 때 자동으로 빌드하고 Gi
 └── .github/workflows/      # GitHub Actions (Pages 자동 배포)
 ```
 
-> **참고**: Tailwind CSS 4는 `@tailwindcss/vite` 플러그인을 통해 PostCSS 파이프라인을 자동으로 구성하기 때문에
-> `postcss.config.cjs`와 같은 개별 설정 파일이 더 이상 필요하지 않습니다.
-
 ## 주요 구성 요소
 
 - **UI 통합**: PrimeVue, Element Plus, Tailwind CSS가 함께 동작하도록 기본 구성되어 있습니다.
