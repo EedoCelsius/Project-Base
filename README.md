@@ -14,7 +14,6 @@ GitHub Actions가 `main` 브랜치로 푸시될 때 자동으로 빌드하고 Gi
 ## 폴더 구조
 
 ```
-├── public/                 # 정적 자산
 ├── src/
 │   ├── App.vue             # 루트 컴포넌트, 라우터 뷰와 테마 동기화 담당
 │   ├── main.js             # 앱 엔트리, Pinia/PrimeVue/ElementPlus/I18n/Router 초기화
@@ -28,16 +27,18 @@ GitHub Actions가 `main` 브랜치로 푸시될 때 자동으로 빌드하고 Gi
 │   ├── router/             # Vue Router 설정 및 라우트 선언
 │   ├── stores/             # Pinia 스토어 정의
 │   ├── styles/
-│       ├── index.js        # PrimeVue/Element Plus/Tailwind 공급자 + 전역 스타일 번들러
-│       ├── base.css        # CSS 변수 및 전역 유틸리티
+│       ├── index.css       # PrimeVue/Element Plus/Tailwind 공급자 + 전역 스타일 번들러
 │       └── supplier/       # 공급자별 스타일 엔트리 및 오버라이드
 │   └── views/              # 라우트에 대응하는 화면 컴포넌트
 ├── index.html              # Vite 진입 HTML
 ├── package.json            # 의존성 및 스크립트
-├── postcss.config.cjs      # PostCSS 설정 (Tailwind, Autoprefixer)
-├── tailwind.config.cjs     # Tailwind 설정
+├── vite.config.js          # Vite 설정 및 Tailwind 플러그인 로드
+├── tailwind.config.js      # Tailwind 설정 (@tailwindcss/vite 플러그인 사용)
 └── .github/workflows/      # GitHub Actions (Pages 자동 배포)
 ```
+
+> **참고**: Tailwind CSS 4는 `@tailwindcss/vite` 플러그인을 통해 PostCSS 파이프라인을 자동으로 구성하기 때문에
+> `postcss.config.cjs`와 같은 개별 설정 파일이 더 이상 필요하지 않습니다.
 
 ## 주요 구성 요소
 
