@@ -2,8 +2,8 @@
   <div class="flex flex-col gap-6 rounded-xl p-6 shadow-sm">
     <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
       <div>
-        <h1 class="text-2xl font-semibold">{{ t('header.title') }}</h1>
-        <p class="text-sm text-muted">{{ t('header.subtitle') }}</p>
+        <h1 class="text-2xl font-semibold">{{ $t('header.title') }}</h1>
+        <p class="text-sm text-muted">{{ $t('header.subtitle') }}</p>
       </div>
       <div class="flex items-center gap-3">
         <el-tag type="success">PrimeVue</el-tag>
@@ -25,7 +25,7 @@
               : 'text-muted hover:bg-primary/10 hover:text-primary'
           ]"
         >
-          {{ t(item.label) }}
+          {{ $t(item.label) }}
         </RouterLink>
       </nav>
       <DarkModeToggle />
@@ -35,7 +35,6 @@
 
 <script>
 import { computed } from 'vue';
-import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
 import DarkModeToggle from '@/components/ui/DarkModeToggle.vue';
 
@@ -45,7 +44,6 @@ export default {
     DarkModeToggle
   },
   setup() {
-    const { t } = useI18n();
     const route = useRoute();
 
     const navItems = computed(() => [
@@ -57,7 +55,6 @@ export default {
     const isActive = (path) => route.matched.some((record) => record.path === path);
 
     return {
-      t,
       navItems,
       isActive
     };
