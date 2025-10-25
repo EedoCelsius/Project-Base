@@ -4,7 +4,7 @@ export default [
     alias: '',
     component: () => import('./index.vue'),
     meta: {
-      titleKey: 'nav.prime'
+      title: 'PrimeVue'
     }
   }
 ];

@@ -27,7 +27,7 @@ const title = useTitle();
 
 router.afterEach((to) => {
   const baseTitle = i18n.global.t('header.title');
-  const pageTitle = to.meta?.titleKey ? i18n.global.t(to.meta.titleKey) : null;
+  const pageTitle = to.meta?.title;
 
   title.value = pageTitle ? `${pageTitle} | ${baseTitle}` : baseTitle;
 });
