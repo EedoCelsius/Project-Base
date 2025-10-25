@@ -1,9 +1,9 @@
 export default [
   {
-    path: 'custom',
+    path: 'custom-tailwind',
     component: () => import('./index.vue'),
     meta: {
-      titleKey: 'nav.custom'
+      titleKey: 'nav.customTailwind'
     }
   }
 ];
