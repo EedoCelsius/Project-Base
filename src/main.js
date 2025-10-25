@@ -12,7 +12,7 @@ import './styles/index.css';
 
 const app = createApp({
   render() {
-    return h(RouterView);
+    return h('RouterView');
   },
 });
 
