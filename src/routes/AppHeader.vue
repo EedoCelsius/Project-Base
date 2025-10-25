@@ -33,31 +33,22 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import DarkModeToggle from '@/components/ui/DarkModeToggle.vue';
 
-export default {
-  name: 'AppHeader',
-  components: {
-    DarkModeToggle
-  },
-  setup() {
-    const route = useRoute();
+const route = useRoute();
 
-    const navItems = computed(() => [
-      { path: '/prime-vue', label: 'nav.prime' },
-      { path: '/element-plus', label: 'nav.element' },
-      { path: '/custom', label: 'nav.custom' }
-    ]);
+const navItems = computed(() => [
+  { path: '/prime-vue', label: 'nav.prime' },
+  { path: '/element-plus', label: 'nav.element' },
+  { path: '/custom', label: 'nav.custom' }
+]);
 
-    const isActive = (path) => route.matched.some((record) => record.path === path);
+const isActive = (path) => route.matched.some((record) => record.path === path);
 
-    return {
-      navItems,
-      isActive
-    };
-  }
-};
+defineOptions({
+  name: 'AppHeader'
+});
 </script>

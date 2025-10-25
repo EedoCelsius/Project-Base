@@ -2,28 +2,19 @@ import { createRouter, createWebHistory } from 'vue-router';
 import { useTitle } from '@vueuse/core';
 import i18n from '@/plugins/i18n';
 
+import primeVueRoutes from '@/routes/prime-vue/routes';
+import elementPlusRoutes from '@/routes/element-plus/routes';
+import customRoutes from '@/routes/custom/routes';
+
 const routes = [
   {
-    path: '/prime-vue',
-    alias: '/',
-    component: () => import('@/views/PrimeVueShowcase.vue'),
-    meta: {
-      titleKey: 'nav.prime'
-    }
-  },
-  {
-    path: '/element-plus',
-    component: () => import('@/views/ElementPlusShowcase.vue'),
-    meta: {
-      titleKey: 'nav.element'
-    }
-  },
-  {
-    path: '/custom',
-    component: () => import('@/views/CustomShowcase.vue'),
-    meta: {
-      titleKey: 'nav.custom'
-    }
+    path: '/',
+    component: () => import('@/routes/index.vue'),
+    children: [
+      ...primeVueRoutes,
+      ...elementPlusRoutes,
+      ...customRoutes
+    ]
   }
 ];
 
