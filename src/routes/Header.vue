@@ -21,7 +21,7 @@
           class="rounded-full px-3 py-1 text-sm transition-colors text-muted hover:bg-primary/10 hover:text-primary"
           active-class="bg-primary/20 text-primary"
         >
-          {{ $t(item.label) }}
+          {{ item.label }}
         </RouterLink>
       </nav>
       <DarkModeToggle />
@@ -34,9 +34,9 @@ import { computed } from 'vue';
 import DarkModeToggle from '@/components/ui/DarkModeToggle.vue';
 
 const navItems = computed(() => [
-  { path: '/prime-vue', label: 'nav.prime' },
-  { path: '/element-plus', label: 'nav.element' },
-  { path: '/custom-tailwind', label: 'nav.customTailwind' }
+  { path: '/prime-vue', label: 'PrimeVue' },
+  { path: '/element-plus', label: 'Element Plus' },
+  { path: '/custom-tailwind', label: 'Custom Tailwind' }
 ]);
 
 defineOptions({

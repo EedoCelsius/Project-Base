@@ -2,16 +2,5 @@
   "header": {
     "title": "Component aesthetic explorer",
     "subtitle": "Compare the default styling of PrimeVue, Element Plus, and Tailwind-crafted interfaces."
-  },
-  "nav": {
-    "prime": "PrimeVue",
-    "element": "Element Plus",
-    "customTailwind": "Custom Tailwind"
-  },
-  "preferences": {
-    "theme": {
-      "light": "Light",
-      "dark": "Dark"
-    }
   }
 }
