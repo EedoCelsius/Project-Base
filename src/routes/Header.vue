@@ -49,6 +49,6 @@ const navItems = computed(() => [
 const isActive = (path) => route.matched.some((record) => record.path === path);
 
 defineOptions({
-  name: 'AppHeader'
+  name: 'Header'
 });
 </script>
