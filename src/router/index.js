@@ -4,8 +4,8 @@ import i18n from '@/plugins/i18n';
 
 const routes = [
   {
-    path: '/',
-    name: 'prime',
+    path: '/prime-vue',
+    alias: '/',
     component: () => import('@/views/PrimeVueShowcase.vue'),
     meta: {
       titleKey: 'nav.prime'
@@ -13,7 +13,6 @@ const routes = [
   },
   {
     path: '/element-plus',
-    name: 'element',
     component: () => import('@/views/ElementPlusShowcase.vue'),
     meta: {
       titleKey: 'nav.element'
@@ -21,7 +20,6 @@ const routes = [
   },
   {
     path: '/custom',
-    name: 'custom',
     component: () => import('@/views/CustomShowcase.vue'),
     meta: {
       titleKey: 'nav.custom'
