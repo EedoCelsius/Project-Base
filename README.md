@@ -1,6 +1,6 @@
 # Vue 3 Project Base
 
-새로운 Vue 3 프로젝트를 빠르게 시작할 수 있도록 PrimeVue, Element Plus, Tailwind CSS, Pinia, Vue I18n, Vue Router, VueUse를 기본으로 구성한 베이스 템플릿입니다. TypeScript 없이 옵션 API 위주로 작성되어 있습니다.
+새로운 Vue 3 프로젝트를 빠르게 시작할 수 있도록 PrimeVue, Element Plus, Tailwind CSS, Pinia, Vue I18n, Vue Router, VueUse를 기본으로 구성한 베이스 템플릿입니다. TypeScript 없이 Composition API 위주로 작성되어 있습니다.
 
 ## 시작하기
 
