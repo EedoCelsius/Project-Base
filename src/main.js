@@ -11,12 +11,7 @@ import router from './plugins/router';
 import 'primeicons/primeicons.css';
 import './styles/index.css';
 
-const app = createApp({
-  render() {
-    return h(RouterView);
-  },
-});
-
+const app = createApp({ render: () => h(RouterView) });
 app.use(createPinia());
 app.use(PrimeVue, primevueOptions);
 app.use(ElementPlus);
