@@ -10,6 +10,5 @@
 </template>
 
 <script setup>
-import { RouterView } from 'vue-router';
-import AppHeader from './AppHeader.vue';
+import Header from './Header.vue';
 </script>
