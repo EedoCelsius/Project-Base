@@ -1,7 +1,7 @@
 export default [
   {
-    path: '',
-    alias: 'prime-vue',
+    path: 'prime-vue',
+    alias: '',
     component: () => import('./index.vue'),
     meta: {
       titleKey: 'nav.prime'
