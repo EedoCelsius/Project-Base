@@ -15,25 +15,22 @@
   </el-switch>
 </template>
 
-<script>
+<script setup>
 import { computed } from 'vue';
 import { usePreferencesStore } from '@/stores/preferences';
 
-export default {
-  name: 'DarkModeToggle',
-  setup() {
-    const preference = usePreferencesStore();
-    const switchStyles = computed(() => ({
-      '--switch-shadow-color': preference.isDarkMode ? 'rgba(0, 0, 225, 0.5)' : 'rgba(225, 0, 0, 0.5)',
-      '--switch-text-color': preference.isDarkMode ? '#012773' : '#fefbd9'
-    }));
+const preference = usePreferencesStore();
 
-    return {
-      preference,
-      switchStyles
-    };
-  }
-};
+const switchStyles = computed(() => ({
+  '--switch-shadow-color': preference.isDarkMode
+    ? 'rgba(0, 0, 225, 0.5)'
+    : 'rgba(225, 0, 0, 0.5)',
+  '--switch-text-color': preference.isDarkMode ? '#012773' : '#fefbd9'
+}));
+
+defineOptions({
+  name: 'DarkModeToggle'
+});
 </script>
 
 <style scoped>

@@ -6,7 +6,7 @@ import ElementPlus from 'element-plus';
 import App from './App.vue';
 import i18n from './plugins/i18n';
 import primevueOptions from './plugins/primevue';
-import router from './router';
+import router from './plugins/router';
 
 import 'primeicons/primeicons.css';
 import './styles/index.css';
