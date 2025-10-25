@@ -1,8 +1,8 @@
 <template>
   <el-switch
     v-model="preference.isDarkMode"
-    active-text="dark"
-    inactive-text="light"
+    active-text="Dark"
+    inactive-text="Light"
     :style="switchStyles"
     inline-prompt
   >
