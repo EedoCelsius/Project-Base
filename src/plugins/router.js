@@ -4,7 +4,7 @@ import i18n from '@/plugins/i18n';
 
 import primeVueRoutes from '@/routes/prime-vue/routes';
 import elementPlusRoutes from '@/routes/element-plus/routes';
-import customRoutes from '@/routes/custom/routes';
+import customTailwindRoutes from '@/routes/custom-tailwind/routes';
 
 const routes = [
   {
@@ -13,7 +13,7 @@ const routes = [
     children: [
       ...primeVueRoutes,
       ...elementPlusRoutes,
-      ...customRoutes
+      ...customTailwindRoutes
     ]
   }
 ];

@@ -6,7 +6,7 @@
   "nav": {
     "prime": "PrimeVue",
     "element": "Element Plus",
-    "custom": "커스텀"
+    "customTailwind": "커스텀 테일윈드"
   },
   "preferences": {
     "theme": {

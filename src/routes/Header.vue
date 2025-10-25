@@ -36,7 +36,7 @@ import DarkModeToggle from '@/components/ui/DarkModeToggle.vue';
 const navItems = computed(() => [
   { path: '/prime-vue', label: 'nav.prime' },
   { path: '/element-plus', label: 'nav.element' },
-  { path: '/custom', label: 'nav.custom' }
+  { path: '/custom-tailwind', label: 'nav.customTailwind' }
 ]);
 
 defineOptions({
