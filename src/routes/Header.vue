@@ -18,12 +18,8 @@
           v-for="item in navItems"
           :key="item.path"
           :to="item.path"
-          class="rounded-full px-3 py-1 text-sm transition-colors"
-          :class="[
-            isActive(item.path)
-              ? 'bg-primary/20 text-primary'
-              : 'text-muted hover:bg-primary/10 hover:text-primary'
-          ]"
+          class="rounded-full px-3 py-1 text-sm transition-colors text-muted hover:bg-primary/10 hover:text-primary"
+          active-class="bg-primary/20 text-primary"
         >
           {{ $t(item.label) }}
         </RouterLink>
@@ -35,18 +31,13 @@
 
 <script setup>
 import { computed } from 'vue';
-import { useRoute } from 'vue-router';
 import DarkModeToggle from '@/components/ui/DarkModeToggle.vue';
-
-const route = useRoute();
 
 const navItems = computed(() => [
   { path: '/prime-vue', label: 'nav.prime' },
   { path: '/element-plus', label: 'nav.element' },
   { path: '/custom', label: 'nav.custom' }
 ]);
-
-const isActive = (path) => route.matched.some((record) => record.path === path);
 
 defineOptions({
   name: 'Header'
