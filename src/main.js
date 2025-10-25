@@ -1,9 +1,8 @@
-import { createApp } from 'vue';
+import { createApp, h } from 'vue';
 import { createPinia } from 'pinia';
 import PrimeVue from 'primevue/config';
 import ElementPlus from 'element-plus';
 
-import App from './App.vue';
 import i18n from './plugins/i18n';
 import primevueOptions from './plugins/primevue';
 import router from './plugins/router';
@@ -11,7 +10,11 @@ import router from './plugins/router';
 import 'primeicons/primeicons.css';
 import './styles/index.css';
 
-const app = createApp(App);
+const app = createApp({
+  render() {
+    return h(RouterView);
+  },
+});
 
 app.use(createPinia());
 app.use(PrimeVue, primevueOptions);
