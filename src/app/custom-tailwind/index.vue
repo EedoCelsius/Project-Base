@@ -73,3 +73,7 @@ import { useShowcaseContent } from '@/composables/showcaseContent';
 
 const { hero, metrics, updates } = useShowcaseContent();
 </script>
+
+<script>
+export const routes = [];
+</script>

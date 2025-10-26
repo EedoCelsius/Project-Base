@@ -67,3 +67,7 @@ const mapTone = (tone) => {
   return 'info';
 };
 </script>
+
+<script>
+export const routes = [];
+</script>
