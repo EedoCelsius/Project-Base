@@ -1,6 +1,6 @@
 export default [
   {
-    path: 'prime-vue',
+    path: 'primevue',
     alias: '',
     component: () => import('./index.vue'),
     meta: {

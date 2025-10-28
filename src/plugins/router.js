@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import { useTitle } from '@vueuse/core';
 import i18n from '@/plugins/i18n';
 
-import primeVueRoutes from '@/routes/prime-vue/routes';
+import primeVueRoutes from '@/routes/primevue/routes';
 import elementPlusRoutes from '@/routes/element-plus/routes';
 import customTailwindRoutes from '@/routes/custom-tailwind/routes';
 

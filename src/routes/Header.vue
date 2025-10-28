@@ -34,7 +34,7 @@ import { computed } from 'vue';
 import DarkModeToggle from '@/components/ui/DarkModeToggle.vue';
 
 const navItems = computed(() => [
-  { path: '/prime-vue', label: 'PrimeVue' },
+  { path: '/primevue', label: 'PrimeVue' },
   { path: '/element-plus', label: 'Element Plus' },
   { path: '/custom-tailwind', label: 'Custom Tailwind' }
 ]);
