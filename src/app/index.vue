@@ -14,35 +14,47 @@ import Header from './Header.vue';
 </script>
 
 <script>
-import { routes as primeVueRoutes } from './prime-vue/index.vue';
-import { routes as elementPlusRoutes } from './element-plus/index.vue';
-import { routes as customTailwindRoutes } from './custom-tailwind/index.vue';
+const primeVueModule = () => import('./prime-vue/index.vue');
+const elementPlusModule = () => import('./element-plus/index.vue');
+const customTailwindModule = () => import('./custom-tailwind/index.vue');
 
 export const routes = [
-  {
+  createFeatureRoute({
+    name: 'app-prime-vue',
     path: 'prime-vue',
     alias: '',
-    component: () => import('./prime-vue/index.vue'),
-    meta: {
-      title: 'PrimeVue'
-    },
-    children: primeVueRoutes
-  },
-  {
+    title: 'PrimeVue',
+    loader: primeVueModule
+  }),
+  createFeatureRoute({
+    name: 'app-element-plus',
     path: 'element-plus',
-    component: () => import('./element-plus/index.vue'),
-    meta: {
-      title: 'Element Plus'
-    },
-    children: elementPlusRoutes
-  },
-  {
+    title: 'Element Plus',
+    loader: elementPlusModule
+  }),
+  createFeatureRoute({
+    name: 'app-custom-tailwind',
     path: 'custom-tailwind',
-    component: () => import('./custom-tailwind/index.vue'),
-    meta: {
-      title: 'Custom Tailwind'
-    },
-    children: customTailwindRoutes
-  }
+    title: 'Custom Tailwind',
+    loader: customTailwindModule
+  })
 ];
+
+function createFeatureRoute({ name, path, alias, title, loader }) {
+  const route = {
+    name,
+    path,
+    component: () => loader().then((mod) => mod.default),
+    meta: {
+      title,
+      lazyChildren: () => loader().then((mod) => mod.routes ?? [])
+    }
+  };
+
+  if (alias !== undefined) {
+    route.alias = alias;
+  }
+
+  return route;
+}
 </script>
