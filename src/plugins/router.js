@@ -3,16 +3,16 @@ import { useTitle } from '@vueuse/core';
 import path from 'path';
 import i18n from '@/plugins/i18n';
 
-import appConfig from '@/app/config';
+import appConfig from '@/app/config.json';
 
-const routeConfigs = import.meta.glob('/src/app/**/config.js', { eager: true });
+const routeConfigs = import.meta.glob('/src/app/**/config.json', { eager: true });
 const routeComponents = import.meta.glob('/src/app/**/index.vue');
 
 const buildRoutes = (config = {}, currentDir = '/src/app') =>
   config.routes?.map(({ src, ...route }) => {
     const routeDir = path.posix.join(currentDir, src);
     const componentPath = path.posix.join(routeDir, 'index.vue');
-    const configPath = path.posix.join(routeDir, 'config.js');
+    const configPath = path.posix.join(routeDir, 'config.json');
     const childrenConfig = routeConfigs[configPath]?.default;
 
     return {
