@@ -3,25 +3,24 @@ import { useTitle } from '@vueuse/core';
 import path from 'path';
 import i18n from '@/plugins/i18n';
 
-import appConfig from '@/app/config';
+const configs = import.meta.glob('/src/app/**/config.json', { eager: true });
+const components = import.meta.glob('/src/app/**/index.vue');
 
-const routeConfigs = import.meta.glob('/src/app/**/config.js', { eager: true });
-const routeComponents = import.meta.glob('/src/app/**/index.vue');
+const buildRoutes = (dir) => {
+  const config = configs[path.posix.join(dir, 'config.json')];
 
-const buildRoutes = (config = {}, currentDir = '/src/app') =>
-  config.routes?.map(({ src, ...route }) => {
-    const routeDir = path.posix.join(currentDir, src);
-    const componentPath = path.posix.join(routeDir, 'index.vue');
-    const configPath = path.posix.join(routeDir, 'config.js');
-    const childrenConfig = routeConfigs[configPath]?.default;
+  return config?.default?.routes?.map(({ src, ...route }) => {
+    const subDir = path.posix.join(dir, src);
+    const component = components[path.posix.join(subDir, 'index.vue')];
 
     return {
       ...route,
-      path: path.posix.basename(routeDir),
-      component: routeComponents[componentPath],
-      children: buildRoutes(childrenConfig, routeDir)
+      component,
+      path: path.posix.basename(subDir),
+      children: buildRoutes(subDir)
     };
   });
+};
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,7 +28,7 @@ const router = createRouter({
     {
       path: '/',
       component: () => import('@/app/index.vue'),
-      children: buildRoutes(appConfig)
+      children: buildRoutes('/src/app')
     }
   ]
 });
