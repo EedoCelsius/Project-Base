@@ -8,12 +8,11 @@ import appConfig from '@/app/config';
 const routeConfigs = import.meta.glob('/src/app/**/config.js', { eager: true });
 const routeComponents = import.meta.glob('/src/app/**/index.vue');
 
-const buildRoutes = (configs = {}, currentDir) =>
-  (configs.routes ?? []).map(({ src, ...route }) => {
+const buildRoutes = (config = {}, currentDir = '/src/app') =>
+  config.routes?.map(({ src, ...route }) => {
     const routeDir = path.posix.join(currentDir, src);
     const componentPath = path.posix.join(routeDir, 'index.vue');
     const configPath = path.posix.join(routeDir, 'config.js');
-
     const childrenConfig = routeConfigs[configPath]?.default;
 
     return {
@@ -30,7 +29,7 @@ const router = createRouter({
     {
       path: '/',
       component: () => import('@/app/index.vue'),
-      children: buildRoutes(appConfig, '/src/app')
+      children: buildRoutes(appConfig)
     }
   ]
 });
