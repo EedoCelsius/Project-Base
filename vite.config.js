@@ -22,7 +22,8 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       alias: {
-        '@': '/src'
+        '@': '/src',
+        'path': 'path-browserify'
       }
     }
   };
