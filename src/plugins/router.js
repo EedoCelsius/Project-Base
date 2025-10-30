@@ -40,7 +40,7 @@ router.afterEach((to) => {
   
   let pageTitle = to.meta?.title;
   const locales = [i18n.global.locale.value, ...i18n.global.fallbackLocale.value];
-  pageTitle = typeof pageTitle === 'object' ? locales.map((locale) => pageTitle[locale]).find(Boolean);
+  if (typeof pageTitle === 'object') pageTitle = locales.map((locale) => pageTitle[locale]).find(Boolean);
 
   title.value = pageTitle ? `${pageTitle} | ${baseTitle}` : baseTitle;
 });
