@@ -15,10 +15,10 @@ const buildRoutes = (dir, routes = []) =>
     const component = components[path.posix.join(subDir, 'index.vue')];
 
     return {
-      meta: config.meta,
       component,
       path: path.posix.basename(subDir),
-      children: buildRoutes(subDir, config.routes ?? []),
+      children: buildRoutes(subDir, config.routes),
+      meta: config.meta,
       ...route
     };
   });
