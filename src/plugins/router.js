@@ -8,23 +8,20 @@ const components = import.meta.glob('/src/app/**/index.vue');
 
 const loadConfig = (dir) => configs[path.posix.join(dir, 'config.json')]?.default ?? {};
 
-const buildRoutes = (dir) => {
-  const routes = loadConfig(dir).routes ?? [];
-
-  return routes.map(({ src, ...route }) => {
-    const meta = loadConfig(subDir).meta;
+const buildRoutes = (dir, routes = []) =>
+  routes.map(({ src, ...route }) => {
     const subDir = path.posix.join(dir, src);
+    const config = loadConfig(subDir);
     const component = components[path.posix.join(subDir, 'index.vue')];
 
     return {
-      meta,
       component,
       path: path.posix.basename(subDir),
-      children: buildRoutes(subDir),
+      children: buildRoutes(subDir, config.routes),
+      meta: config.meta,
       ...route
     };
   });
-};
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,7 +29,7 @@ const router = createRouter({
     {
       path: '/',
       component: () => import('@/app/index.vue'),
-      children: buildRoutes('/src/app')
+      children: buildRoutes('/src/app', loadConfig('/src/app').routes ?? [])
     }
   ]
 });
