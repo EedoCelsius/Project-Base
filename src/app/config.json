@@ -4,11 +4,7 @@
       "src": "./primevue",
       "alias": ""
     },
-    {
-      "src": "./element-plus"
-    },
-    {
-      "src": "./custom-tailwind"
-    }
+    "./element-plus",
+    "./custom-tailwind"
   ]
 }
