@@ -2,22 +2,13 @@
   "routes": [
     {
       "src": "./primevue",
-      "alias": "",
-      "meta": {
-        "title": "PrimeVue"
-      }
+      "alias": ""
     },
     {
-      "src": "./element-plus",
-      "meta": {
-        "title": "Element Plus"
-      }
+      "src": "./element-plus"
     },
     {
-      "src": "./custom-tailwind",
-      "meta": {
-        "title": "Custom Tailwind"
-      }
+      "src": "./custom-tailwind"
     }
   ]
 }

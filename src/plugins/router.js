@@ -6,14 +6,18 @@ import i18n from '@/plugins/i18n';
 const configs = import.meta.glob('/src/app/**/config.json', { eager: true });
 const components = import.meta.glob('/src/app/**/index.vue');
 
-const buildRoutes = (dir) => {
-  const config = configs[path.posix.join(dir, 'config.json')];
+const loadConfig = (dir) => configs[path.posix.join(dir, 'config.json')]?.default ?? {};
 
-  return config?.default?.routes?.map(({ src, ...route }) => {
+const buildRoutes = (dir) => {
+  const { routes = [] } = loadConfig(dir);
+
+  return routes.map(({ src, ...route }) => {
     const subDir = path.posix.join(dir, src);
     const component = components[path.posix.join(subDir, 'index.vue')];
+    const { routes: _childRoutes, ...routeConfig } = loadConfig(subDir);
 
     return {
+      ...routeConfig,
       ...route,
       component,
       path: path.posix.basename(subDir),
@@ -37,7 +41,7 @@ const title = useTitle();
 
 router.afterEach((to) => {
   const baseTitle = i18n.global.t('header.title');
-  
+
   let pageTitle = to.meta?.title;
   const locales = [i18n.global.locale.value, ...i18n.global.fallbackLocale.value];
   if (typeof pageTitle === 'object') pageTitle = locales.map((locale) => pageTitle[locale]).find(Boolean);
