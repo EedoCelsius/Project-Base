@@ -4,28 +4,19 @@
       "src": "./primevue",
       "alias": "",
       "meta": {
-        "title": {
-          "en": "PrimeVue",
-          "ko": "프라임뷰"
-        }
+        "title": "PrimeVue"
       }
     },
     {
       "src": "./element-plus",
       "meta": {
-        "title": {
-          "en": "Element Plus",
-          "ko": "엘리먼트 플러스"
-        }
+        "title": "Element Plus"
       }
     },
     {
       "src": "./custom-tailwind",
       "meta": {
-        "title": {
-          "en": "Custom Tailwind",
-          "ko": "커스텀 테일윈드"
-        }
+        "title": "Custom Tailwind"
       }
     }
   ]
