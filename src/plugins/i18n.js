@@ -11,7 +11,7 @@ const recentLocale = useStorage('locale', browserLocale);
 const i18n = createI18n({
   legacy: false,
   locale: recentLocale.value,
-  fallbackLocale: 'en',
+  fallbackLocale: ['en'], // must be an array
   messages: {
     en,
     ko
