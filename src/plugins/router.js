@@ -9,19 +9,19 @@ const components = import.meta.glob('/src/app/**/index.vue');
 const loadConfig = (dir) => configs[path.posix.join(dir, 'config.json')]?.default ?? {};
 
 const buildRoutes = (dir) => {
-  const { routes = [] } = loadConfig(dir);
+  const routes = loadConfig(dir).routes ?? [];
 
   return routes.map(({ src, ...route }) => {
+    const meta = loadConfig(subDir).meta;
     const subDir = path.posix.join(dir, src);
     const component = components[path.posix.join(subDir, 'index.vue')];
-    const { routes: _childRoutes, ...routeConfig } = loadConfig(subDir);
 
     return {
-      ...routeConfig,
-      ...route,
+      meta,
       component,
       path: path.posix.basename(subDir),
-      children: buildRoutes(subDir)
+      children: buildRoutes(subDir),
+      ...route
     };
   });
 };
