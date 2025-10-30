@@ -37,7 +37,10 @@ const title = useTitle();
 
 router.afterEach((to) => {
   const baseTitle = i18n.global.t('header.title');
-  const pageTitle = to.meta?.title;
+  
+  let pageTitle = to.meta?.title;
+  const locales = [i18n.global.locale.value, ...i18n.global.fallbackLocale.value];
+  pageTitle = typeof pageTitle === 'object' ? locales.map((locale) => pageTitle[locale]).find(Boolean);
 
   title.value = pageTitle ? `${pageTitle} | ${baseTitle}` : baseTitle;
 });
