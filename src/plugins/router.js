@@ -16,7 +16,7 @@ const buildRoutes = (dir, routes = []) =>
 
     return {
       component,
-      path: path.posix.basename(subDir),
+      path: path.posix.basename(path.posix.relative('/src/app', subDir)),
       children: buildRoutes(subDir, config.routes),
       meta: config.meta,
       ...route
@@ -25,13 +25,7 @@ const buildRoutes = (dir, routes = []) =>
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      component: () => import('@/app/index.vue'),
-      children: buildRoutes('/src/app', loadConfig('/src/app').routes ?? [])
-    }
-  ]
+  routes: buildRoutes('/src/app', [{ src: '' }])
 });
 
 const title = useTitle();
