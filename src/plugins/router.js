@@ -32,14 +32,14 @@ const router = createRouter({
 });
 
 const title = useTitle();
-const siteTitle = i18n.global.t('header.title');
+const appTitle = i18n.global.t('header.title');
 const locales = [i18n.global.locale.value, ...i18n.global.fallbackLocale.value];
 
 router.afterEach((to) => {
   let pageTitle = to.meta?.title;
   if (typeof pageTitle === 'object') pageTitle = locales.map((locale) => pageTitle[locale]).find(Boolean);
 
-  title.value = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
+  title.value = pageTitle ? `${pageTitle} | ${appTitle}` : appTitle;
 });
 
 export default router;
