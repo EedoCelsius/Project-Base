@@ -12,27 +12,27 @@ const loadConfig = (dir) => configs[path.posix.join(dir, 'config.json')]?.defaul
 const rootConfig = loadConfig(APP_DIR);
 
 const buildRoutes = (dir, opts = {}) => {
-    const { meta, routes } = loadConfig(dir);
+  const { meta, routes } = loadConfig(dir);
+    
+  return {
+    meta,
+    component: components[path.posix.join(dir, 'index.vue')],
+    path: path.posix.basename(path.posix.relative(APP_DIR, dir)),
+    children: routes?.map((route) => {
+        if (typeof route === 'string') route = { src: route }
 
-    return {
-        meta,
-        component: components[path.posix.join(dir, 'index.vue')],
-        path: path.posix.basename(path.posix.relative(APP_DIR, dir)),
-        children: routes?.map((route) => {
-            if (typeof route === 'string') route = { src: route }
+        const { src, ...subOpts } = route;
+        const subDir = path.posix.join(dir, src)
 
-            const { src, ...subOpts } = route;
-            const subDir = path.posix.join(dir, src)
-
-            return buildRoutes(subDir, subOpts)
-        }),
-        ...opts
-    };
+        return buildRoutes(subDir, subOpts)
+    }),
+    ...opts
+  };
 };
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: buildRoutes(APP_DIR)
+  routes: [buildRoutes(APP_DIR)]
 });
 
 const title = useTitle();
