@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "title": "Project Base"
+  },
+  "routes": [
+    {
+      "src": "./primevue",
+      "alias": ""
+    },
+    "./element-plus",
+    "./custom-tailwind"
+  ],
+  "messages": {
+    "header": {
+      "en": {
+        "title": "Component aesthetic explorer",
+        "subtitle": "Compare the default styling of PrimeVue, Element Plus, and Tailwind-crafted interfaces."
+      },
+      "ko": {
+        "title": "컴포넌트 스타일 비교",
+        "subtitle": "PrimeVue, Element Plus, Tailwind UI의 기본 스타일을 한눈에 살펴보세요"
+      }
+    }
+  }
+}
