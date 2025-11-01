@@ -4,8 +4,7 @@
   },
   "routes": [
     {
-      "src": "./main",
-      "path": ""
+      "src": "./main"
     }
   ]
 }
