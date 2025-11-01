@@ -1,3 +1,4 @@
+import { computed, watch } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import { useTitle } from '@vueuse/core';
 import path from 'path';
@@ -32,14 +33,35 @@ const router = createRouter({
 });
 
 const title = useTitle();
-const appTitle = i18n.global.t('header.title');
-const locales = [i18n.global.locale.value, ...i18n.global.fallbackLocale.value];
+const rootConfig = loadConfig(APP_DIR);
+const resolveTitle = (value, locales) => {
+  if (!value) return undefined;
+  if (typeof value === 'string') return value;
 
-router.afterEach((to) => {
-  let pageTitle = to.meta?.title;
-  if (typeof pageTitle === 'object') pageTitle = locales.map((locale) => pageTitle[locale]).find(Boolean);
+  return locales.map((locale) => value[locale]).find(Boolean);
+};
 
-  title.value = pageTitle ? `${pageTitle} | ${appTitle}` : appTitle;
-});
+const locales = computed(() => [i18n.global.locale.value, ...i18n.global.fallbackLocale.value]);
+const appTitle = computed(() => resolveTitle(rootConfig.meta?.title, locales.value) ?? '');
+
+watch(
+  [() => router.currentRoute.value, () => i18n.global.locale.value, appTitle],
+  ([currentRoute]) => {
+    const resolvedAppTitle = appTitle.value;
+    const currentLocales = locales.value;
+    const route = currentRoute;
+
+    const isRootRoute = route.path === '/' || route.path === '';
+    const pageTitle = resolveTitle(route.meta?.title, currentLocales);
+
+    if (isRootRoute) {
+      title.value = resolvedAppTitle;
+      return;
+    }
+
+    title.value = pageTitle ? `${pageTitle} | ${resolvedAppTitle}` : resolvedAppTitle;
+  },
+  { immediate: true }
+);
 
 export default router;
