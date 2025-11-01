@@ -33,11 +33,11 @@
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import DarkModeToggle from '@/components/ui/DarkModeToggle.vue';
-import appConfig from './config.json';
+import config from './config.json';
 
 const { t } = useI18n({
   useScope: 'local',
-  messages: appConfig.messages
+  messages: config.messages.header
 });
 
 const navItems = computed(() => [
