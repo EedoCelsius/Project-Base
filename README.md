@@ -9,7 +9,10 @@ npm install
 npm run dev
 ```
 
-GitHub Actions가 `main` 브랜치로 푸시될 때 자동으로 빌드하고 GitHub Pages로 배포합니다.
+- `npm run build`: 프로덕션 번들 생성
+- `npm run preview`: 로컬에서 프로덕션 번들을 미리보기
+
+`main` 브랜치에 푸시하면 GitHub Actions가 자동으로 빌드하고 GitHub Pages에 배포합니다.
 
 ## 폴더 구조
 
@@ -42,21 +45,19 @@ GitHub Actions가 `main` 브랜치로 푸시될 때 자동으로 빌드하고 Gi
 - **상태 관리**: Pinia 스토어와 VueUse 유틸리티를 활용할 수 있는 환경이 갖춰져 있습니다.
 - **국제화**: Vue I18n을 사용해 기본 로케일을 브라우저 언어로 설정하고, `config.json`을 통해 다국어 메시지를 선언할 수 있습니다.
 - **라우팅 자동화**: `src/app/**/config.json`을 읽어 라우트를 구성하며, 섹션별 메타데이터와 다국어 타이틀도 함께 정의할 수 있습니다.
-- **스타일링 비교**: PrimeVue·Element Plus·Tailwind 기반 UI를 한 화면에서 비교할 수 있도록 기본 섹션을 제공합니다.
-- **테마/언어 토글**: 다크 모드 전환과 언어 선택 상태를 Pinia 스토어에 저장해 사용자 선호를 유지합니다.
 - **배포 자동화**: GitHub Actions를 통해 빌드 후 GitHub Pages에 배포하도록 설정되어 있습니다.
 
 ## `config.json`으로 화면 확장하기
 
-1. `src/app` 하위에 새 디렉터리를 만들고 `index.vue`와 `config.json`을 추가합니다.
-2. 새 디렉터리의 `config.json`에 `meta.title`, `routes`(필요하다면 하위 경로) 등을 정의합니다.
-3. 루트 `src/app/config.json`의 `routes` 배열에 새 디렉터리를 등록합니다.
+1. `src/app` 내부에 새 디렉터리를 만들고 `index.vue`와 `config.json`을 추가합니다.
+2. 새 디렉터리의 `config.json`에 `meta.title`, `messages` 등을 정의합니다.
+3. 상위 루트 `config.json`의 `routes` 배열에 새 디렉터리를 등록합니다.
 
 루트/섹션 구성 파일은 다음과 같은 필드를 가집니다.
 
 - `meta.title`: 문자열 또는 `{ en: '...', ko: '...' }` 형태의 다국어 객체. 페이지 타이틀과 문서 제목에 사용됩니다.
 - `routes`: 문자열 경로(`"./child"`) 또는 `{ "src": "./child", "alias": "" }` 형태의 객체 배열. 자동으로 중첩 라우트를 생성합니다.
-- `messages`: `i18n` 인스턴스에 병합되는 다국어 메시지 모음. 예시로 헤더 제목·부제목이 등록되어 있습니다.
+- `messages`: `i18n` 인스턴스에 병합되는 다국어 메시지 모음입니다.
 
 ## 참고
 
