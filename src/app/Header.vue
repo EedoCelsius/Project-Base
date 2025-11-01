@@ -2,8 +2,8 @@
   <div class="flex flex-col gap-6 rounded-xl p-6 shadow-sm">
     <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
       <div>
-        <h1 class="text-2xl font-semibold">{{ $t('header.title') }}</h1>
-        <p class="text-sm text-muted">{{ $t('header.subtitle') }}</p>
+        <h1 class="text-2xl font-semibold">{{ t('title') }}</h1>
+        <p class="text-sm text-muted">{{ t('subtitle') }}</p>
       </div>
       <div class="flex items-center gap-3">
         <el-tag type="success">PrimeVue</el-tag>
@@ -31,7 +31,14 @@
 
 <script setup>
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import DarkModeToggle from '@/components/ui/DarkModeToggle.vue';
+import config from './config.json';
+
+const { t } = useI18n({
+  useScope: 'local',
+  messages: config.messages.header
+});
 
 const navItems = computed(() => [
   { path: '/primevue', label: 'PrimeVue' },
