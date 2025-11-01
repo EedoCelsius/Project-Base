@@ -11,7 +11,7 @@ const components = import.meta.glob('/src/app/**/index.vue');
 const loadConfig = (dir) => configs[path.posix.join(dir, 'config.json')]?.default ?? {};
 const rootConfig = loadConfig(APP_DIR);
 
-const buildRoutes = (dir, opts = {}) => {
+const buildRoutes = (dir, overrides = {}) => {
   const { meta, routes } = loadConfig(dir);
     
   return {
@@ -21,12 +21,12 @@ const buildRoutes = (dir, opts = {}) => {
     children: routes?.map((route) => {
         if (typeof route === 'string') route = { src: route }
 
-        const { src, ...subOpts } = route;
+        const { src, ...subOverrides } = route;
         const subDir = path.posix.join(dir, src)
 
-        return buildRoutes(subDir, subOpts)
+        return buildRoutes(subDir, subOverrides)
     }),
-    ...opts
+    ...overrides
   };
 };
 
