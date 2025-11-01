@@ -48,7 +48,7 @@ watch(
     const appTitle = resolveTitle(rootConfig.meta?.title);
     const pageTitle = resolveTitle(route.meta?.title);
 
-    title.value = pageTitle !== appTitle ? `${pageTitle} | ${appTitle}` : appTitle;
+    title.value = pageTitle && pageTitle !== appTitle ? `${pageTitle} | ${appTitle}` : appTitle;
   },
   { immediate: true }
 );
