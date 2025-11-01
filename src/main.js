@@ -1,5 +1,6 @@
 import { createApp, h } from 'vue';
 import { createPinia } from 'pinia';
+import { RouterView } from 'vue-router';
 import PrimeVue from 'primevue/config';
 import ElementPlus from 'element-plus';
 
