@@ -33,33 +33,21 @@ const router = createRouter({
 });
 
 const title = useTitle();
-const rootConfig = loadConfig(APP_DIR);
-const resolveTitle = (value, locales) => {
-  if (!value) return undefined;
-  if (typeof value === 'string') return value;
-
+const resolveTitle = (value) => {
+  if (typeof value !== 'object') return value;
+  const locales = [i18n.global.locale.value, ...i18n.global.fallbackLocale.value];
   return locales.map((locale) => value[locale]).find(Boolean);
 };
 
-const locales = computed(() => [i18n.global.locale.value, ...i18n.global.fallbackLocale.value]);
-const appTitle = computed(() => resolveTitle(rootConfig.meta?.title, locales.value) ?? '');
+const rootConfig = loadConfig(APP_DIR);
 
 watch(
-  [() => router.currentRoute.value, () => i18n.global.locale.value, appTitle],
-  ([currentRoute]) => {
-    const resolvedAppTitle = appTitle.value;
-    const currentLocales = locales.value;
-    const route = currentRoute;
+  [router.currentRoute, i18n.global.locale],
+  ([route]) => {
+    const appTitle = resolveTitle(rootConfig.meta.title);
+    const pageTitle = resolveTitle(route.meta?.title);
 
-    const isRootRoute = route.path === '/' || route.path === '';
-    const pageTitle = resolveTitle(route.meta?.title, currentLocales);
-
-    if (isRootRoute) {
-      title.value = resolvedAppTitle;
-      return;
-    }
-
-    title.value = pageTitle ? `${pageTitle} | ${resolvedAppTitle}` : resolvedAppTitle;
+    title.value = pageTitle !== appTitle ? `${pageTitle} | ${appTitle}` : appTitle;
   },
   { immediate: true }
 );
