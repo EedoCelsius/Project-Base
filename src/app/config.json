@@ -1,9 +1,6 @@
 {
   "meta": {
-    "title": {
-      "en": "Component aesthetic explorer",
-      "ko": "컴포넌트 스타일 비교"
-    }
+    "title": "Project Base"
   },
   "routes": [
     {
