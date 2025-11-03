@@ -30,7 +30,7 @@ const createColorScale = (name, source, baseTone) => {
   return [...base, ...tones];
 };
 
-const rootCss = `:root {\n${[
+const rootCss = `@theme {\n${[
   ...createColorScale('primary', 'primary', 6),
   ...createColorScale('surface', 'surface', 0),
   ...createColorScale('success', 'success', 6),
