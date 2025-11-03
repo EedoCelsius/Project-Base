@@ -7,9 +7,14 @@ import ElementPlus from 'element-plus';
 import i18n from './plugins/i18n';
 import primevueOptions from './plugins/primevue';
 import router from './plugins/router';
+import applyElementPlusTheme from './plugins/elementPlusTheme';
+import applyTailwindTheme from './plugins/tailwindTheme';
 
 import 'primeicons/primeicons.css';
 import './styles/index.css';
+
+applyTailwindTheme();
+applyElementPlusTheme();
 
 const app = createApp({ render: () => h(RouterView) });
 app.use(createPinia());
