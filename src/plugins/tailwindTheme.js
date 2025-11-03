@@ -30,8 +30,10 @@ const createColorScale = (name, source, baseTone) => {
   return [...base, ...tones];
 };
 
+import tailwindCss from 'tailwindcss/index.css?inline';
+
 const rootCss = `
-@import 'tailwindcss';
+${tailwindCss}
 
 @custom-variant dark (&:where(.dark, .dark *));
 
