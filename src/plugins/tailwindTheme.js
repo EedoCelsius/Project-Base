@@ -30,7 +30,13 @@ const createColorScale = (name, source, baseTone) => {
   return [...base, ...tones];
 };
 
-const rootCss = `@theme {\n${[
+const rootCss = `
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+${[
   ...createColorScale('primary', 'primary', 6),
   ...createColorScale('surface', 'surface', 0),
   ...createColorScale('success', 'success', 6),
@@ -38,7 +44,8 @@ const rootCss = `@theme {\n${[
   ...createColorScale('danger', 'danger', 6),
   ...createColorScale('error', 'error', 6),
   ...createColorScale('info', 'info', 6)
-].join('\n')}\n}`;
+].join('\n')}
+}`;
 
 export default function applyTailwindTheme() {
   injectStyle('tailwind-theme', rootCss);
