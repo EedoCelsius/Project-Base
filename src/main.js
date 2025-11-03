@@ -8,7 +8,7 @@ import i18n from './plugins/i18n';
 import primevueOptions from './plugins/primevue';
 import router from './plugins/router';
 
-import './plugins/index.css';
+import './plugins/styles/index.css';
 import './styles/index.css';
 
 const app = createApp({ render: () => h(RouterView) });
