@@ -1,6 +1,5 @@
-@import './supplier/tailwind.css';
+@import 'tailwindcss';
 @import './supplier/primevue.css';
-@import './supplier/element-plus.css';
 
 :root {
   color-scheme: light;
