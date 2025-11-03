@@ -1,0 +1,31 @@
+:root {
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root.dark {
+  color-scheme: dark;
+}
+
+@layer color-base {
+  :root {
+    --primary-base: #10b981;
+    --surface-base: #0f172b;
+    --success-base: #67c23a;
+    --warning-base: #e6a23c;
+    --danger-base: #f56c6c;
+    --error-base: #f56c6c;
+    --info-base: #909399;
+  }
+
+  .dark {
+    --primary-base: color-mix(in srgb, #10b981 80%, black 20%);
+    --surface-base: #0f172b;
+    --success-base: color-mix(in srgb, #67c23a 80%, black 20%);
+    --warning-base: color-mix(in srgb, #e6a23c 80%, black 20%);
+    --danger-base: color-mix(in srgb, #f56c6c 80%, black 20%);
+    --error-base: color-mix(in srgb, #f56c6c 80%, black 20%);
+    --info-base: color-mix(in srgb, #909399 80%, black 20%);
+  }
+}
